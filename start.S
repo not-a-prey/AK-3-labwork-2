@@ -8,7 +8,7 @@
 .global __hard_reset__
 .global __stack_start
 
-.extern lab1
+.extern lab1  //linking the lab1
 
 /*
  * vector table
@@ -20,7 +20,7 @@ vtable:
     .word __hard_reset__+1
     .size vtable, .-vtable
 __hard_reset__:
-    LDR SP, =__stack_start
+    LDR SP, =__stack_start  //initializing stack
     bl lab1
 _loop:
     b _loop
